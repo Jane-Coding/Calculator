@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@700&display=swap&family=Goldman:wght@700&family=Orbitron:wght@900&display=swap');
+
+.layout {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    row-gap: 10px; 
+    column-gap: 10px;
+}
+.screen {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-right: .5em;
+    padding-left: .5em;
+    background-color: dimgray;
+    color: orange;
+    font-size: 2.5em;
+    border-radius: 50px;
+    grid-column: span 5;
+    font-family: 'Orbitron', sans-serif;
+}
+
+button {
+    width: 100px;
+    background: 
+    radial-gradient(circle at bottom right, orange, black 88%) padding-box, 
+    linear-gradient(to bottom right, black, transparent) padding-box,     
+    linear-gradient(to top left, black 25%, orange) border-box;
+    border-radius: 50em;
+    border: 4px solid transparent;
+    color: #F0C505;
+    font-size: 2em;
+    font-family: 'Goldman', sans-serif;
+}
+
+button:hover {
+    background: 
+    radial-gradient(circle at bottom right, rgb(199, 131, 5), black 85%) padding-box, 
+    linear-gradient(to bottom right, black, transparent) padding-box,     
+    linear-gradient(to top left, black 25%, orange) border-box;
+    color: #c9a402;
+}
+
+button:active {
+    background: 
+    radial-gradient(circle at bottom right, rgb(199, 131, 5), black 72%) padding-box,
+    linear-gradient(to bottom right, rgb(17, 11, 0), transparent) padding-box,     
+    linear-gradient(to top left, rgb(17, 11, 0) 20%, orange) border-box;
+    color: #ac8c00;
+}
+
+button:not(button:nth-child(15)):not(button:nth-child(16)){
+    height: 5rem;
+}
+
+button:nth-child(15),
+button:nth-child(16)
+{
+    grid-row: span 2;
+}
