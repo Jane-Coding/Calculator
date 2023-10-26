@@ -3,7 +3,7 @@
 .layout {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: repeat(6, 1fr);
     row-gap: 10px; 
     column-gap: 10px;
 }
@@ -21,13 +21,54 @@
     font-family: 'Orbitron', sans-serif;
 }
 
+.top-plate{
+    grid-column: span 5;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 1fr 9fr 1fr;
+    align-items: center;
+}
+
+.second-screen {
+    margin: auto .2em;
+    background-color: dimgray;
+    color: orange;
+    font-size: 1.8em;
+    border-radius: 50px;
+    font-family: 'Orbitron', sans-serif;
+    grid-row: span 2;
+}
+
+.light {
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    font-family: 'Orbitron', sans-serif;
+    background: gray;
+    justify-self: center;
+}
+
+[data-light-on] {
+    box-shadow: 0 0 .5em red, 0 0 1.2em gold;  
+    color: rgb(37, 34, 34);
+    background: orange;
+}
+
+.light:nth-child(2){
+    grid-column: 3;
+}
+
+.light:nth-child(4) {
+    grid-row: 2;
+}
+
 button {
     width: 100px;
     background: 
     radial-gradient(circle at bottom right, orange, black 88%) padding-box, 
     linear-gradient(to bottom right, black, transparent) padding-box,     
     linear-gradient(to top left, black 25%, orange) border-box;
-    border-radius: 50em;
+    border-radius: 5em;
     border: 4px solid transparent;
     color: #F0C505;
     font-size: 2em;
@@ -50,12 +91,12 @@ button:active {
     color: #ac8c00;
 }
 
-button:not(button:nth-child(15)):not(button:nth-child(16)){
+button:not(button:nth-child(16)):not(button:nth-child(17)){
     height: 5rem;
 }
 
-button:nth-child(15),
-button:nth-child(16)
+button:nth-child(16),
+button:nth-child(17)
 {
     grid-row: span 2;
 }

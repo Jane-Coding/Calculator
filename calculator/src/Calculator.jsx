@@ -1,4 +1,5 @@
 import "./Calculator.css"
+import TopPlate from "./TopPlate"
 import { useState } from "react"
 
 function choise(number, total, el){
@@ -12,6 +13,7 @@ function choise(number, total, el){
 
 export default function Calculator (){
     const buttons = [7,8,9,"/","C",4,5,6,"-","*", 1,2,3,"+", "=", 0,"00", "."]
+    const lights = ["+", "second-screen", "-", "*", "/"]
     const [data, setData] = useState({num: "", total: 0, action: "+"})
 
     function calculate(el){
@@ -37,9 +39,10 @@ export default function Calculator (){
             }
             }
     }
-                
+
     return (
-        <div className="layout">
+        <div className="layout">            
+            <TopPlate lights={lights} currentTotal={data.total} lightOn={data.action}/>
             <span className="screen">{data.num}</span>
             {buttons.map((el) => <button key={el} onClick={() => calculate(el)}>{el}</button>)}
         </div>
