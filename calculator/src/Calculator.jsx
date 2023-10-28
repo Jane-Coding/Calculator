@@ -5,7 +5,7 @@ import { useState } from "react"
 
 export default function Calculator (){
     const buttons = [7,8,9,"/","C",4,5,6,"-","*", 1,2,3,"+", "=", 0,"00", "."]
-    const lights = ["+", "second-screen", "-", "*", "/"]
+    const lights = ["+", "top-screen", "-", "*", "/"]
     const [data, setData] = useState({num: "", total: 0, action: ""})
 
     function checkLength (newTotal){
@@ -61,10 +61,17 @@ export default function Calculator (){
     }
 
     return (
-        <div className="layout">            
-            <TopPlate lights={lights} currentTotal={data.total} lightOn={data.action}/>
-            <span className="screen">{data.num}</span>
-            {buttons.map((el) => <button key={el} onClick={() => calculate(el)}>{el}</button>)}
+        <>
+        <div className="frame">
+            <div className="screen-frame">
+                <TopPlate lights={lights} currentTotal={data.total} lightOn={data.action}/>
+                <span className="screen">{data.num}</span>
+            </div>            
+            <div className="buttons-layout">
+                {buttons.map((el) => <button key={el} onClick={() => calculate(el)}>{el}</button>)}
+            </div>
+            
         </div>
+        </>
     )
 }

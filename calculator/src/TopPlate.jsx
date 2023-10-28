@@ -2,13 +2,13 @@ export default function TopPlate({lights, currentTotal, lightOn}){
     return (
         <div className="top-plate">
             {lights.map((el) => 
-            el === "second-screen" ? 
+            el === "top-screen" ? 
             <span className={el}>{currentTotal}</span> 
             : 
             el === lightOn ? 
-            <span className="light" data-light-on>{el}</span> 
+            <span className="light" data-light-on><p>{el}</p></span> 
             :
-            <span className="light">{el}</span>
+            <span className="light"><p>{el}</p></span>
             )
             }
         </div>
