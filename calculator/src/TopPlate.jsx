@@ -1,3 +1,4 @@
+import "./TopPlate.css"
 export default function TopPlate({lights, currentTotal, lightOn}){
     return (
         <div className="top-plate">
