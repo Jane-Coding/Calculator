@@ -15,6 +15,9 @@ export default function Calculator (){
     function calculate(el){
         if(typeof el === "number"){
             setData(newNumber => ({...data, num: `${data.num}` + `${el}`}));
+            if(data.num.length > 14){
+                setData({...data, total: "SYSTEM OVERLOAD"})
+            } 
         }
         else {
             if(el === "="){
@@ -34,6 +37,9 @@ export default function Calculator (){
                 if(data.num !== ""){
                     setData(() => ({...data, num: `${data.num}` + `${el}`}));                
                 }
+                if(data.num.length > 13){
+                    setData({...data, total: "SYSTEM OVERLOAD"})
+                } 
             }
             else if (el === "."){
                 if(data.num === ""){
